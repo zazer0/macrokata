@@ -43,12 +43,15 @@ macro_rules! for_2d {
 
         // for row in 1..5 {
         for $row in $r_range {
+            // ^ expands the VAR NAME
             //     let row: i32 = row;
             let $row: $r_type = $row;
+            //         ^ sets TYPE of var name
             //     for col in 2..7 {
             for $col in $c_range {
                 //         let col: i32 = col;
                 let $col: $c_type = $col;
+                //          ^ sets TYPE of var name
                 //         println!("({}, {})", row, col)
                 $toexec
             }
