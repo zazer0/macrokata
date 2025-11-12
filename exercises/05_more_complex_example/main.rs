@@ -16,6 +16,35 @@ impl Coordinate {
 
 // TODO: Create `for_2d!` macro here.
 
+// INFO: FRAGMENT SPECIFIERS
+// ident: an "identifier",
+// -> like a variable name. ident metavariables (ANY can follow it)
+// block: a "block expression" (ANY can follow it)
+// -> (curly braces, and their contents).
+// followed by anything.
+// ty: a type. ONLY :
+// [ =>, ,, =, |, ;, :, >, >>, [, {, as, where, or block metavariable ]
+//  ...can follow it
+
+// TODO:
+// for_2d!(row <i32> in 1..5, col <i32> in 2..7, {
+// for_2d!
+macro_rules! for_2d {
+    // (row <i32> in 1..5,
+    ($row:ident <$r_type:ty> in $r_range:expr ,
+    //                        ^ LITERAL "in"
+    //                     ^ LITERAL ">"
+    //          ^ LITERAL "<"
+    // col <i32> in 2..7,
+    $col:ident <$c_type:ty> in $c_range:expr ,
+    // { println!("({}, {})", row, col)
+        $toexec:block) => {
+        println!("hiiiii");
+    };
+}
+
+// });
+
 ////////// DO NOT CHANGE BELOW HERE /////////
 
 fn main() {
