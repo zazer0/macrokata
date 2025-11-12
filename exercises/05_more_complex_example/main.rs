@@ -39,11 +39,22 @@ macro_rules! for_2d {
     $col:ident <$c_type:ty> in $c_range:expr ,
     // { println!("({}, {})", row, col)
         $toexec:block) => {
-        println!("hiiiii");
+        // TODO: actually use the passed vars properly!!
+
+        // for row in 1..5 {
+        for $row in $r_range {
+            //     let row: i32 = row;
+            let $row: $r_type = $row;
+            //     for col in 2..7 {
+            for $col in $c_range {
+                //         let col: i32 = col;
+                let $col: $c_type = $col;
+                //         println!("({}, {})", row, col)
+                $toexec
+            }
+        }
     };
 }
-
-// });
 
 ////////// DO NOT CHANGE BELOW HERE /////////
 
